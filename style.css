@@ -140,7 +140,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 1vw;
-  padding: 8vh 6vw 10vh;
+  padding: 3vh 6vw 10vh;
   min-height: 82vh;
   scroll-margin-top: var(--header-h);
 }
