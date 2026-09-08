@@ -13,6 +13,7 @@ const translations = {
     "hero.subtitle": "Desarrollador de videojuegos independiente. Diseño mecánicas, escribo el código que las sostiene y cuido cada detalle hasta que se sienten bien al jugarlas.",
     "hero.cta.linkedin": "LinkedIn",
     "hero.cta.itch": "Itch.io",
+    "hero.video.title": "¡Mírame!",
 
     "portfolio.heading": "Portfolio",
     "card.aria": "Ver proyecto (próximamente)",
@@ -65,6 +66,7 @@ const translations = {
     "hero.subtitle": "Independent game developer. I design mechanics, write the code that holds them together, and polish every detail until they feel right to play.",
     "hero.cta.linkedin": "LinkedIn",
     "hero.cta.itch": "Itch.io",
+    "hero.video.title": "Watch me!",
 
     "portfolio.heading": "Portfolio",
     "card.aria": "View project (coming soon)",
@@ -104,7 +106,7 @@ const translations = {
     "contact.message.label": "Message",
     "contact.message.placeholder": "Tell me what you're thinking about",
     "contact.submit": "Send message",
-    
+
     "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear()
   }
 };

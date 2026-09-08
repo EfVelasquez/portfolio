@@ -185,6 +185,13 @@ h1, h2, h3 {
   outline: 2px solid var(--border);
 }
 
+.video-title {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+}
+
 .video-frame::before {
   content: "";
   position: absolute;
