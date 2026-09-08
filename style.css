@@ -45,6 +45,11 @@ h1, h2, h3 {
   line-height: 1.15;
 }
 
+.mailto {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ---------- Topbar ---------- */
 
 .topbar {
@@ -55,7 +60,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between;
   padding: 22px 6vw;
-  background: rgba(186, 197, 214, 0.75);
+  background: rgb(216 168 116 / 50%);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
