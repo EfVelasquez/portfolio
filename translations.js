@@ -104,7 +104,7 @@ const translations = {
     "contact.message.label": "Message",
     "contact.message.placeholder": "Tell me what you're thinking about",
     "contact.submit": "Send message",
-
-    "footer.text": "Eño — Game Developer"
+    
+    "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear()
   }
 };
