@@ -159,6 +159,15 @@
         </a>
         <p class="contact-subtitle" data-i18n="contact.oremail">...O a través de mi correo electrónico:</p>
         <a class="mailto" href="mailto:enniofernando@gmail.com">enniofernando@gmail.com</a>
+        <span class="copy-email-slot">
+          <button class="copy-email" data-i18n-aria="contact.copy" aria-label="Copiar" onclick="copyEmail(this)">
+              <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="5" width="11" height="11" rx="2"></rect>
+                <rect class="copy-front" x="8" y="8" width="11" height="11" rx="2"></rect>
+              </svg>
+              <span class="copy-label" data-i18n="contact.copy">Copiar</span>
+          </button>
+        </span>
         <form class="contact-form">
           <div class="field">
             <label for="name" data-i18n="contact.name.label">Nombre</label>
@@ -181,11 +190,35 @@
   <footer class="site-footer">
     <p data-i18n="footer.text">Ennio — Game Developer</p>
   </footer>
-
   <script src="layout.js"></script>
   <script src="translations.js"></script>
   <script src="i18n.js"></script>
   <script src="contact.js"></script>
+  <script>
+    function copyTranslation(key) {
+      var lang = document.documentElement.lang || "es";
+      var dict = (window.translations && window.translations[lang]) || {};
+      return dict[key] || key;
+    }
+
+    function copyEmail(button) {
+      navigator.clipboard.writeText("enniofernando@gmail.com");
+
+      button.classList.add("is-copied");
+      button.setAttribute("data-i18n-aria", "contact.copied");
+      button.setAttribute("aria-label", copyTranslation("contact.copied"));
+      button.querySelector(".copy-label").setAttribute("data-i18n", "contact.copied");
+      button.querySelector(".copy-label").textContent = copyTranslation("contact.copied");
+
+      setTimeout(() => {
+        button.classList.remove("is-copied");
+        button.setAttribute("data-i18n-aria", "contact.copy");
+        button.setAttribute("aria-label", copyTranslation("contact.copy"));
+        button.querySelector(".copy-label").setAttribute("data-i18n", "contact.copy");
+        button.querySelector(".copy-label").textContent = copyTranslation("contact.copy");
+      }, 2000);
+  }
+  </script>
 
 </body>
 </html>
