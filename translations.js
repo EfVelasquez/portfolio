@@ -54,6 +54,11 @@ const translations = {
     "contact.message.label": "Mensaje",
     "contact.message.placeholder": "Cuéntame en qué estás pensando",
     "contact.submit": "Enviar mensaje",
+    "contact.sending": "Enviando…",
+    "contact.success": "¡Mensaje enviado! Te responderé pronto.",
+    "contact.error.name": "Escribe tu nombre.",
+    "contact.error.email": "Introduce un correo válido.",
+    "contact.error.message": "Cuéntame algo antes de enviar.",
 
     "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear()
   },
@@ -108,7 +113,14 @@ const translations = {
     "contact.message.label": "Message",
     "contact.message.placeholder": "Tell me what you're thinking about",
     "contact.submit": "Send message",
+    "contact.sending": "Sending…",
+    "contact.success": "Message sent! I'll get back to you soon.",
+    "contact.error.name": "Please enter your name.",
+    "contact.error.email": "Enter a valid email address.",
+    "contact.error.message": "Tell me something before sending.",
 
     "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear()
   }
 };
+
+window.translations = translations;

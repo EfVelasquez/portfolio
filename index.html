@@ -36,12 +36,15 @@
       <div class="hero-text">
         <h1 data-i18n="hero.title">Construyo mundos jugables, un sistema a la vez.</h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">Desarrollador de videojuegos independiente. Diseño mecánicas, escribo el código que las sostiene y cuido cada detalle hasta que se sienten bien al jugarlas.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contacto" data-i18n="nav.contacto">Contacto</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/efvb/" target="_blank" rel="noopener">
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3.9V20H3.5V8.75zM10 8.75h3.74v1.54h.05c.52-.94 1.8-1.93 3.7-1.93 3.96 0 4.7 2.5 4.7 5.75V20h-3.9v-5.14c0-1.23-.02-2.8-1.75-2.8-1.76 0-2.03 1.32-2.03 2.7V20H10V8.75z"/></svg>
-            <span data-i18n="hero.cta.linkedin">LinkedIn</span>
-          </a>
+        <div class="hero-actions-wrap">
+          <img class="avatar-thumb" src="resources/pic.png" alt="Foto de Ennio">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto" data-i18n="nav.contacto">Contacto</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/efvb/" target="_blank" rel="noopener">
+              <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.5 8.75h3.9V20H3.5V8.75zM10 8.75h3.74v1.54h.05c.52-.94 1.8-1.93 3.7-1.93 3.96 0 4.7 2.5 4.7 5.75V20h-3.9v-5.14c0-1.23-.02-2.8-1.75-2.8-1.76 0-2.03 1.32-2.03 2.7V20H10V8.75z"/></svg>
+              <span data-i18n="hero.cta.linkedin">LinkedIn</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="hero-media">
@@ -69,6 +72,7 @@
               <span data-i18n="project.crypt.badge">Gamejam Winner</span>
             </span>
             <img src="https://picsum.photos/seed/dungeon/600/450" alt="Captura del proyecto">
+            <span class="badge-tag" style="background: #e8791a;">Unity</span>
           </div>
           <div class="card-body">
             <h3 data-i18n="project.crypt.title">Cripta Isométrica</h3>
@@ -83,6 +87,7 @@
               <span data-i18n="project.loop.badge">CPCRetroDev Winner</span>
             </span>
             <img src="https://picsum.photos/seed/loop/600/450" alt="Captura del proyecto">
+            <span class="badge-tag" style="background: #111111;">UE5</span>
           </div>
           <div class="card-body">
             <h3 data-i18n="project.loop.title">Bucle de Medianoche</h3>
@@ -115,7 +120,10 @@
         </a>
 
         <a class="card" href="#" data-i18n-aria="card.aria">
-          <div class="card-image"><img src="https://picsum.photos/seed/foundry/600/450" alt="Captura del proyecto"></div>
+          <div class="card-image">
+            <img src="https://picsum.photos/seed/foundry/600/450" alt="Captura del proyecto">
+            <span class="badge-tag" style="background: #2464c4;">C++</span>
+          </div>
           <div class="card-body">
             <h3 data-i18n="project.foundry.title">La Fundición</h3>
             <p data-i18n="project.foundry.desc">Sistema de crafteo e interacción por fases construido con event dispatchers en Blueprints.</p>
@@ -164,7 +172,7 @@
             <label for="message" data-i18n="contact.message.label">Mensaje</label>
             <textarea id="message" name="message" rows="5" placeholder="Cuéntame en qué estás pensando" data-i18n-placeholder="contact.message.placeholder"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Enviar mensaje</button>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit" disabled>Enviar mensaje</button>
         </form>
       </div>
     </section>
@@ -177,6 +185,7 @@
   <script src="layout.js"></script>
   <script src="translations.js"></script>
   <script src="i18n.js"></script>
+  <script src="contact.js"></script>
 
 </body>
 </html>
