@@ -381,6 +381,7 @@ h1, h2, h3 {
 .achievement-copy span {
   color: rgb(255 255 255 / 78%);
   font-size: 0.86rem;
+  white-space: pre-line;
 }
 
 @keyframes achievement-in {
@@ -721,6 +722,7 @@ h1, h2, h3 {
   max-width: 60ch;
   font-size: 1.05rem;
   color: var(--ink-soft);
+  white-space: pre-line;
 }
 
 .project-meta {
@@ -788,6 +790,7 @@ h1, h2, h3 {
 
 .project-main p {
   color: var(--ink-soft);
+  white-space: pre-line;
 }
 
 .project-list {
@@ -797,6 +800,10 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.project-list li {
+  white-space: pre-line;
 }
 
 .project-side {
