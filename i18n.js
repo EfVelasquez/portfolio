@@ -49,6 +49,13 @@
       }
     });
 
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-alt");
+      if (dict[key] !== undefined) {
+        el.setAttribute("alt", dict[key]);
+      }
+    });
+
     document.querySelectorAll(".lang-option").forEach(function (btn) {
       btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
     });

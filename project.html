@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Nombre del juego] — Ennio F. Velásquez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar-name">Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer</span>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="index.html#inicio" data-i18n="nav.inicio">Inicio</a>
+        <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+        <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3c2.5 2.4 3.9 5.6 3.9 9s-1.4 6.6-3.9 9c-2.5-2.4-3.9-5.6-3.9-9s1.4-6.6 3.9-9z"/>
+          <path d="M3.3 9.5h17.4M3.3 14.5h17.4"/>
+        </svg>
+        <button type="button" class="lang-option is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-option" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <a class="back-link" href="index.html#portfolio">
+        <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="project.template.back">Volver al portfolio</span>
+      </a>
+
+      <h1 class="project-title" data-i18n="project.template.title">[Nombre del juego]</h1>
+      <p class="project-tagline" data-i18n="project.template.tagline">[Una frase corta que resuma el juego: género, plataforma y qué lo hace especial.]</p>
+
+      <div class="project-meta">
+        <span class="tech-tag" style="background: #e8791a;">Unity</span>
+        <span class="tech-tag" style="background: #111111;">UE5</span>
+        <span class="tech-tag" style="background: #2464c4;">C++</span>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-i18n="project.template.link.itch">Jugar en itch.io</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.template.link.steam">Ver en Steam</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.template.link.github">Código en GitHub</a>
+      </div>
+    </section>
+
+    <section class="project-video">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Vídeo del proyecto"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="project-main">
+        <h2 data-i18n="project.template.about.heading">Sobre el proyecto</h2>
+        <p data-i18n="project.template.about.body">[Párrafo de introducción: qué es el juego, en qué contexto lo hiciste (jam, proyecto personal, equipo), y cuánto duró el desarrollo.]</p>
+
+        <h3 data-i18n="project.template.role.heading">Mi rol</h3>
+        <p data-i18n="project.template.role.body">[Qué hiciste tú concretamente: sistemas de combate, IA, herramientas de editor, gestión del equipo, etc. Esta sección es la más importante para quien revisa el portfolio.]</p>
+
+        <h3 data-i18n="project.template.challenges.heading">Retos técnicos</h3>
+        <ul class="project-list">
+          <li data-i18n="project.template.challenges.item1">[Reto 1 — el problema y cómo lo resolviste.]</li>
+          <li data-i18n="project.template.challenges.item2">[Reto 2 — idem.]</li>
+          <li data-i18n="project.template.challenges.item3">[Reto 3 — idem.]</li>
+        </ul>
+
+        <h3 data-i18n="project.template.learned.heading">Qué aprendí</h3>
+        <p data-i18n="project.template.learned.body">[Reflexión breve: qué harías distinto, qué te llevaste para el siguiente proyecto.]</p>
+      </div>
+
+      <aside class="project-side">
+        <div class="side-card">
+          <h4 data-i18n="project.template.facts.heading">Ficha técnica</h4>
+          <dl class="side-facts">
+            <dt data-i18n="project.template.facts.engine.label">Motor</dt>
+            <dd data-i18n="project.template.facts.engine.value">[Unity / Unreal Engine 5 / propio]</dd>
+            <dt data-i18n="project.template.facts.duration.label">Duración</dt>
+            <dd data-i18n="project.template.facts.duration.value">[X semanas / meses]</dd>
+            <dt data-i18n="project.template.facts.team.label">Equipo</dt>
+            <dd data-i18n="project.template.facts.team.value">[Solo / X personas]</dd>
+            <dt data-i18n="project.template.facts.platform.label">Plataforma</dt>
+            <dd data-i18n="project.template.facts.platform.value">[PC / Web / Móvil]</dd>
+          </dl>
+        </div>
+      </aside>
+    </section>
+
+    <section class="project-gallery">
+      <h2 data-i18n="project.template.gallery.heading">Galería</h2>
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/seed/gal1/700/500" alt="Captura del proyecto 1" data-i18n-alt="project.template.gallery.alt1">
+        <img src="https://picsum.photos/seed/gal2/700/500" alt="Captura del proyecto 2" data-i18n-alt="project.template.gallery.alt2">
+        <img src="https://picsum.photos/seed/gal3/700/500" alt="Captura del proyecto 3" data-i18n-alt="project.template.gallery.alt3">
+        <img src="https://picsum.photos/seed/gal4/700/500" alt="Captura del proyecto 4" data-i18n-alt="project.template.gallery.alt4">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Ennio — Game Developer</p>
+  </footer>
+
+  <script src="layout.js"></script>
+  <script src="translations.js"></script>
+  <script src="i18n.js"></script>
+
+</body>
+</html>
