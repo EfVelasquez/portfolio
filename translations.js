@@ -190,3 +190,5 @@ const translations = {
     "project.template.gallery.alt4": "Project screenshot 4"
   }
 };
+
+window.translations = translations;
