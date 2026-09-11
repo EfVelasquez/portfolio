@@ -60,6 +60,9 @@ const translations = {
     "contact.error.email": "Introduce un correo válido.",
     "contact.error.message": "Cuéntame algo antes de enviar.",
 
+    "contact.copy": "Copiar",
+    "contact.copied": "¡Copiado!",
+
     "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear(),
 
     "project.template.back": "Volver al portfolio",
@@ -149,6 +152,9 @@ const translations = {
     "contact.error.name": "Please enter your name.",
     "contact.error.email": "Enter a valid email address.",
     "contact.error.message": "Tell me something before sending.",
+
+    "contact.copy": "Copy",
+    "contact.copied": "Copied!",
 
     "footer.text": "Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer — " + new Date().getFullYear(),
 
