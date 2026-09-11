@@ -353,6 +353,11 @@ h1, h2, h3 {
   fill: currentColor;
 }
 
+.achievement-toast--gold .achievement-icon {
+  border-color: #111111;
+  color: #111111;
+}
+
 .achievement-copy {
   display: grid;
   gap: 2px;
