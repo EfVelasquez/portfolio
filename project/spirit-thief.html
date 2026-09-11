@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spirit Thief — Ennio F. Velásquez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar-name">Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer</span>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../index.html#inicio" data-i18n="nav.inicio">Inicio</a>
+        <a href="../index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="../index.html#contacto" data-i18n="nav.contacto">Contacto</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+        <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3c2.5 2.4 3.9 5.6 3.9 9s-1.4 6.6-3.9 9c-2.5-2.4-3.9-5.6-3.9-9s1.4-6.6 3.9-9z"/>
+          <path d="M3.3 9.5h17.4M3.3 14.5h17.4"/>
+        </svg>
+        <button type="button" class="lang-option is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-option" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <a class="back-link" href="../index.html#portfolio">
+        <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="project.spiritthief.back">Volver al portfolio</span>
+      </a>
+
+      <h1 class="project-title" data-i18n="project.spiritthief.title">Spirit Thief</h1>
+      <p class="project-tagline" data-i18n="project.spiritthief.tagline">[Soulslike en 3D — enfréntate a una variedad de enemigos y escapa haciendo parkour por las ruinas del imperio.]</p>
+
+      <div class="project-meta">
+        <span class="tech-tag" style="background: #2464c4;">C++</span>
+        <span class="tech-tag" style="background: #444444;">OpenGL</span>
+        <span class="tech-tag" style="background: #8a3ab9;">Motor propio</span>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-i18n="project.spiritthief.link.itch">Jugar en itch.io</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.spiritthief.link.steam">Ver en Steam</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.spiritthief.link.github">Código en GitHub</a>
+      </div>
+    </section>
+
+    <section class="project-video">
+      <div class="video-frame">
+        <iframe
+          src="[LINK_VIDEO_YOUTUBE_EMBED]"
+          title="Vídeo del proyecto"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="project-main">
+        <h2 data-i18n="project.spiritthief.about.heading">Sobre el proyecto</h2>
+        <p data-i18n="project.spiritthief.about.body">[Párrafo de introducción: qué es el juego, en qué contexto lo hiciste (proyecto personal en solitario), y cuánto duró el desarrollo (9 meses).]</p>
+
+        <h3 data-i18n="project.spiritthief.role.heading">Mi rol</h3>
+        <p data-i18n="project.spiritthief.role.body">[Desarrollé el motor 3D desde cero en C++ con OpenGL: renderizado de mallas estáticas y esqueléticas, animación, iluminación, shaders, sistema de partículas, técnica de arte técnico. Sistema de combate avanzado, IA de enemigos y navegación. Gestión de memoria, carga de assets, profiling y optimización, sistema de carga de niveles, sistema de guardado, integración de Bullet Physics, sistema de entidades ECS.]</p>
+
+        <h3 data-i18n="project.spiritthief.challenges.heading">Retos técnicos</h3>
+        <ul class="project-list">
+          <li data-i18n="project.spiritthief.challenges.item1">[Reto 1 — el problema y cómo lo resolviste.]</li>
+          <li data-i18n="project.spiritthief.challenges.item2">[Reto 2 — idem.]</li>
+          <li data-i18n="project.spiritthief.challenges.item3">[Reto 3 — idem.]</li>
+        </ul>
+
+        <h3 data-i18n="project.spiritthief.learned.heading">Qué aprendí</h3>
+        <p data-i18n="project.spiritthief.learned.body">[Reflexión breve: qué harías distinto, qué te llevaste para el siguiente proyecto.]</p>
+      </div>
+
+      <aside class="project-side">
+        <div class="side-card">
+          <h4 data-i18n="project.spiritthief.facts.heading">Ficha técnica</h4>
+          <dl class="side-facts">
+            <dt data-i18n="project.spiritthief.facts.engine.label">Motor</dt>
+            <dd data-i18n="project.spiritthief.facts.engine.value">Motor propio (C++ / OpenGL)</dd>
+            <dt data-i18n="project.spiritthief.facts.duration.label">Duración</dt>
+            <dd data-i18n="project.spiritthief.facts.duration.value">9 meses</dd>
+            <dt data-i18n="project.spiritthief.facts.team.label">Equipo</dt>
+            <dd data-i18n="project.spiritthief.facts.team.value">Solo</dd>
+            <dt data-i18n="project.spiritthief.facts.platform.label">Plataforma</dt>
+            <dd data-i18n="project.spiritthief.facts.platform.value">[PC / Web / Móvil]</dd>
+          </dl>
+        </div>
+      </aside>
+    </section>
+
+    <section class="project-gallery">
+      <h2 data-i18n="project.spiritthief.gallery.heading">Galería</h2>
+      <div class="gallery-grid">
+        <img src="[IMAGEN_1]" alt="Captura del proyecto 1" data-i18n-alt="project.spiritthief.gallery.alt1">
+        <img src="[IMAGEN_2]" alt="Captura del proyecto 2" data-i18n-alt="project.spiritthief.gallery.alt2">
+        <img src="[IMAGEN_3]" alt="Captura del proyecto 3" data-i18n-alt="project.spiritthief.gallery.alt3">
+        <img src="[IMAGEN_4]" alt="Captura del proyecto 4" data-i18n-alt="project.spiritthief.gallery.alt4">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Ennio — Game Developer</p>
+  </footer>
+
+  <script src="../layout.js"></script>
+  <script src="../translations.js"></script>
+  <script src="../i18n.js"></script>
+
+</body>
+</html>

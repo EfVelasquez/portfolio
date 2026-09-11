@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Down Action Prototype — Ennio F. Velásquez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar-name">Ennio Fernando Velásquez Berlingeri — Gameplay & Systems Programmer</span>
+    <div class="topbar-right">
+      <nav class="topbar-nav">
+        <a href="../index.html#inicio" data-i18n="nav.inicio">Inicio</a>
+        <a href="../index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="../index.html#contacto" data-i18n="nav.contacto">Contacto</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Selector de idioma">
+        <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3c2.5 2.4 3.9 5.6 3.9 9s-1.4 6.6-3.9 9c-2.5-2.4-3.9-5.6-3.9-9s1.4-6.6 3.9-9z"/>
+          <path d="M3.3 9.5h17.4M3.3 14.5h17.4"/>
+        </svg>
+        <button type="button" class="lang-option is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-option" data-lang="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <a class="back-link" href="../index.html#portfolio">
+        <svg class="back-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="project.topdownaction.back">Volver al portfolio</span>
+      </a>
+
+      <h1 class="project-title" data-i18n="project.topdownaction.title">Top Down Action Prototype</h1>
+      <p class="project-tagline" data-i18n="project.topdownaction.tagline">[Hack n' slash top-down. Prototipado tanto en Unreal Engine como en Unity. — Trabajo en proceso.]</p>
+
+      <div class="project-meta">
+        <span class="tech-tag" style="background: #111111;">UE5</span>
+        <span class="tech-tag" style="background: #e8791a;">Unity</span>
+        <span class="tech-tag" style="background: #999999;">WIP</span>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-i18n="project.topdownaction.link.itch">Jugar en itch.io</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.topdownaction.link.steam">Ver en Steam</a>
+        <a class="btn btn-outline" href="#" target="_blank" rel="noopener" data-i18n="project.topdownaction.link.github">Código en GitHub</a>
+      </div>
+    </section>
+
+    <section class="project-video">
+      <div class="video-frame">
+        <iframe
+          src="[LINK_VIDEO_YOUTUBE_EMBED]"
+          title="Vídeo del proyecto"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="project-body">
+      <div class="project-main">
+        <h2 data-i18n="project.topdownaction.about.heading">Sobre el proyecto</h2>
+        <p data-i18n="project.topdownaction.about.body">[Párrafo de introducción: qué es el prototipo, en qué contexto lo hiciste (proyecto personal, work in progress), y cuánto tiempo llevás en él.]</p>
+
+        <h3 data-i18n="project.topdownaction.role.heading">Mi rol</h3>
+        <p data-i18n="project.topdownaction.role.body">[Prototipo de Unreal: mecánicas de gameplay (movimiento, combate y habilidades), game feel, materiales (shaders) e identidad visual, elementos de gameplay basados en física combinados con hack n' slash. Prototipo de Unity: sistema avanzado de habilidades/estados/efectos que centraliza toda la lógica de gameplay, similar al GAS de Unreal, y física de movimiento.]</p>
+
+        <h3 data-i18n="project.topdownaction.challenges.heading">Retos técnicos</h3>
+        <ul class="project-list">
+          <li data-i18n="project.topdownaction.challenges.item1">[Reto 1 — el problema y cómo lo resolviste.]</li>
+          <li data-i18n="project.topdownaction.challenges.item2">[Reto 2 — idem.]</li>
+          <li data-i18n="project.topdownaction.challenges.item3">[Reto 3 — idem.]</li>
+        </ul>
+
+        <h3 data-i18n="project.topdownaction.learned.heading">Qué aprendí</h3>
+        <p data-i18n="project.topdownaction.learned.body">[Reflexión breve: qué harías distinto, qué te llevaste para el siguiente proyecto.]</p>
+      </div>
+
+      <aside class="project-side">
+        <div class="side-card">
+          <h4 data-i18n="project.topdownaction.facts.heading">Ficha técnica</h4>
+          <dl class="side-facts">
+            <dt data-i18n="project.topdownaction.facts.engine.label">Motor</dt>
+            <dd data-i18n="project.topdownaction.facts.engine.value">Unreal Engine 5 y Unity (prototipos paralelos)</dd>
+            <dt data-i18n="project.topdownaction.facts.duration.label">Duración</dt>
+            <dd data-i18n="project.topdownaction.facts.duration.value">Work in Progress</dd>
+            <dt data-i18n="project.topdownaction.facts.team.label">Equipo</dt>
+            <dd data-i18n="project.topdownaction.facts.team.value">Solo</dd>
+            <dt data-i18n="project.topdownaction.facts.platform.label">Plataforma</dt>
+            <dd data-i18n="project.topdownaction.facts.platform.value">[PC / Web / Móvil]</dd>
+          </dl>
+        </div>
+      </aside>
+    </section>
+
+    <section class="project-gallery">
+      <h2 data-i18n="project.topdownaction.gallery.heading">Galería</h2>
+      <div class="gallery-grid">
+        <img src="[IMAGEN_1]" alt="Captura del proyecto 1" data-i18n-alt="project.topdownaction.gallery.alt1">
+        <img src="[IMAGEN_2]" alt="Captura del proyecto 2" data-i18n-alt="project.topdownaction.gallery.alt2">
+        <img src="[IMAGEN_3]" alt="Captura del proyecto 3" data-i18n-alt="project.topdownaction.gallery.alt3">
+        <img src="[IMAGEN_4]" alt="Captura del proyecto 4" data-i18n-alt="project.topdownaction.gallery.alt4">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.text">Ennio — Game Developer</p>
+  </footer>
+
+  <script src="../layout.js"></script>
+  <script src="../translations.js"></script>
+  <script src="../i18n.js"></script>
+
+</body>
+</html>
