@@ -134,6 +134,9 @@
         submitBtn.textContent = originalLabel;
         statusEl.textContent = t("contact.success");
         statusEl.classList.add("form-status--success");
+        if (typeof window.AnimateAchievement === "function") {
+          window.AnimateAchievement("achievement.contact.title", "achievement.contact.description");
+        }
         form.reset();
       }, 900);
     });

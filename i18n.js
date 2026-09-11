@@ -5,6 +5,22 @@
 (function () {
   const STORAGE_KEY = "site-lang";
   const DEFAULT_LANG = "es";
+  let languageChangeCount = 0;
+
+  window.resetLanguageAchievementProgress = function () {
+    languageChangeCount = 0;
+    try {
+      sessionStorage.removeItem("achievement.language.title");
+    } catch (e) {
+      // The counter is still reset if sessionStorage is blocked.
+    }
+  };
+
+  try {
+    sessionStorage.removeItem("achievement.language.title");
+  } catch (e) {
+    // The language achievement can still be counted if sessionStorage is blocked.
+  }
 
   function getSavedLang() {
     try {
@@ -68,8 +84,15 @@
     document.querySelectorAll(".lang-option").forEach(function (btn) {
       btn.addEventListener("click", function () {
         const lang = btn.getAttribute("data-lang");
+        const previousLang = document.documentElement.lang || DEFAULT_LANG;
+        if (lang === previousLang) return;
+
+        languageChangeCount += 1;
         applyLang(lang);
         saveLang(lang);
+        if (languageChangeCount >= 5 && typeof window.AnimateAchievement === "function") {
+          window.AnimateAchievement("achievement.language.title", "achievement.language.description");
+        }
       });
     });
   });

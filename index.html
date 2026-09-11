@@ -28,6 +28,13 @@
         <button type="button" class="lang-option is-active" data-lang="en">EN</button>
         <button type="button" class="lang-option" data-lang="es">ES</button>
       </div>
+      <label class="achievement-toggle" data-i18n-aria="achievement.toggle.aria">
+        <svg class="achievement-toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 4h12v3a6 6 0 0 1-4 5.66V15h3v2H7v-2h3v-2.34A6 6 0 0 1 6 7V4Zm2 2v1a4 4 0 0 0 8 0V6H8Zm-4 0h2v2a3 3 0 0 1-3-3V4h1v2Zm16 0V4h1v1a3 3 0 0 1-3 3V6h2Z"/>
+        </svg>
+        <input id="achievement-toggle" type="checkbox" checked onchange="toggleAchievements(this)">
+        <span class="achievement-toggle-track" aria-hidden="true"></span>
+      </label>
     </div>
   </header>
 
@@ -51,7 +58,8 @@
         <h2 class="video-title" data-i18n="hero.video.title">Watch me!</h2>
         <div class="video-frame">
           <iframe
-            src="https://www.youtube.com/embed/3ATdBlIdBKU"
+            id="showcase-video"
+            src="https://www.youtube.com/embed/3ATdBlIdBKU?enablejsapi=1"
             title="Gamedev Showcase Video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -205,12 +213,221 @@
 
   <footer class="site-footer">
     <p data-i18n="footer.text">Ennio — Game Developer</p>
+    <button class="reset-achievements" type="button" data-i18n="footer.resetAchievements" onclick="resetAchievements()">Reset achievements</button>
   </footer>
   <script src="layout.js"></script>
   <script src="translations.js"></script>
   <script src="i18n.js"></script>
   <script src="contact.js"></script>
   <script>
+    (function () {
+      var achievementStorageKey = "portfolio-achievements";
+      var achievementPreferenceKey = "portfolio-achievements-enabled";
+      var viewedProjectsKey = "portfolio-viewed-projects";
+      var finalAchievementKey = "achievement.final.title";
+      var requiredAchievementKeys = [
+        "achievement.cinema.title",
+        "achievement.language.title",
+        "achievement.contact.title",
+        "achievement.copycat.title",
+        "achievement.projects2.title",
+        "achievement.projectsAll.title"
+      ];
+      var finalAchievementTimerScheduled = false;
+
+      function achievementsEnabled() {
+        try {
+          return localStorage.getItem(achievementPreferenceKey) !== "false";
+        } catch (error) {
+          return true;
+        }
+      }
+
+      window.toggleAchievements = function (toggle) {
+        try {
+          localStorage.setItem(achievementPreferenceKey, String(toggle.checked));
+        } catch (error) {
+          // Achievements remain enabled if localStorage is blocked.
+        }
+        if (!toggle.checked) {
+          var activeToast = document.querySelector(".achievement-toast");
+          if (activeToast) activeToast.remove();
+        }
+      };
+
+      function getViewedProjectCount() {
+        var projectIds = Array.prototype.map.call(
+          document.querySelectorAll(".portfolio .card"),
+          function (card) { return card.getAttribute("href").split("/").pop(); }
+        );
+        try {
+          var viewedProjects = JSON.parse(localStorage.getItem(viewedProjectsKey) || "[]");
+          return projectIds.filter(function (projectId) {
+            return viewedProjects.indexOf(projectId) !== -1;
+          }).length;
+        } catch (error) {
+          return 0;
+        }
+      }
+
+      function checkProjectAchievements() {
+        var viewedCount = getViewedProjectCount();
+        var totalProjects = document.querySelectorAll(".portfolio .card").length;
+        if (viewedCount >= 2) {
+          window.AnimateAchievement("achievement.projects2.title", "achievement.projects2.description");
+        }
+        if (viewedCount === totalProjects) {
+          window.AnimateAchievement("achievement.projectsAll.title", "achievement.projectsAll.description");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var toggle = document.getElementById("achievement-toggle");
+        if (toggle) toggle.checked = achievementsEnabled();
+        checkProjectAchievements();
+        if (requiredAchievementKeys.every(function (key) {
+          return getShownAchievements().indexOf(key) !== -1;
+        })) {
+          scheduleFinalAchievement();
+        }
+      });
+
+      window.addEventListener("storage", function (event) {
+        if (event.key === viewedProjectsKey) checkProjectAchievements();
+        if (event.key === viewedProjectsKey || event.key === achievementStorageKey) {
+          if (requiredAchievementKeys.every(function (key) {
+            return getShownAchievements().indexOf(key) !== -1;
+          })) {
+            scheduleFinalAchievement();
+          }
+        }
+      });
+
+      window.resetAchievements = function () {
+        sessionStorage.removeItem(achievementStorageKey);
+        localStorage.removeItem(viewedProjectsKey);
+        if (typeof window.resetLanguageAchievementProgress === "function") {
+          window.resetLanguageAchievementProgress();
+        }
+      };
+
+      function getShownAchievements() {
+        try {
+          return JSON.parse(sessionStorage.getItem(achievementStorageKey) || "[]");
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function scheduleFinalAchievement() {
+        if (finalAchievementTimerScheduled) return;
+        finalAchievementTimerScheduled = true;
+        window.setTimeout(function () {
+          finalAchievementTimerScheduled = false;
+          var shownAchievements = getShownAchievements();
+          var hasEveryAchievement = requiredAchievementKeys.every(function (key) {
+            return shownAchievements.indexOf(key) !== -1;
+          });
+          if (hasEveryAchievement) {
+            window.AnimateAchievement(finalAchievementKey, "achievement.final.description");
+          }
+        }, 5000);
+      }
+
+      function playAchievementSound() {
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+
+        var context = new AudioContext();
+        var oscillator = context.createOscillator();
+        var gain = context.createGain();
+        var now = context.currentTime;
+
+        oscillator.type = "triangle";
+        oscillator.frequency.setValueAtTime(523.25, now);
+        oscillator.frequency.setValueAtTime(659.25, now + 0.1);
+        oscillator.frequency.setValueAtTime(783.99, now + 0.2);
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(0.12, now + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.55);
+
+        oscillator.connect(gain);
+        gain.connect(context.destination);
+        oscillator.start(now);
+        oscillator.stop(now + 0.55);
+        oscillator.addEventListener("ended", function () {
+          context.close();
+        });
+      }
+
+      window.AnimateAchievement = function (title, description) {
+        if (!achievementsEnabled()) return;
+        var shownAchievements = getShownAchievements();
+        if (shownAchievements.indexOf(title) !== -1) return;
+
+        shownAchievements.push(title);
+        try {
+          sessionStorage.setItem(achievementStorageKey, JSON.stringify(shownAchievements));
+        } catch (error) {
+          // The notification can still be shown if sessionStorage is blocked.
+        }
+
+        if (title !== finalAchievementKey && requiredAchievementKeys.every(function (key) {
+          return shownAchievements.indexOf(key) !== -1;
+        })) {
+          scheduleFinalAchievement();
+        }
+
+        var existing = document.querySelector(".achievement-toast");
+        if (existing) existing.remove();
+
+        var lang = document.documentElement.lang || "es";
+        var dictionary = (window.translations && window.translations[lang]) || {};
+        var unlockedText = dictionary["achievement.unlocked"] || "Achievement unlocked";
+        var displayTitle = dictionary[title] || title;
+        var displayDescription = dictionary[description] || description;
+        var toast = document.createElement("aside");
+        toast.className = "achievement-toast" + (title === finalAchievementKey ? " achievement-toast--gold" : "");
+        toast.setAttribute("role", "status");
+        toast.innerHTML =
+          '<div class="achievement-icon" aria-hidden="true">' +
+          '<svg viewBox="0 0 24 24"><path d="M6 4h12v3a6 6 0 0 1-4 5.66V15h3v2H7v-2h3v-2.34A6 6 0 0 1 6 7V4Zm2 2v1a4 4 0 0 0 8 0V6H8Zm-4 0h2v2a3 3 0 0 1-3-3V4h1v2Zm16 0V4h1v1a3 3 0 0 1-3 3V6h2Z"/></svg>' +
+          '</div>' +
+          '<div class="achievement-copy"><small></small><strong></strong><span></span></div>';
+        toast.querySelector("small").textContent = unlockedText;
+        toast.querySelector("strong").textContent = displayTitle;
+        toast.querySelector("span").textContent = displayDescription;
+        document.body.appendChild(toast);
+        playAchievementSound();
+
+        window.setTimeout(function () {
+          toast.classList.add("is-leaving");
+          window.setTimeout(function () {
+            toast.remove();
+          }, 350);
+        }, 5500);
+      };
+
+      window.onYouTubeIframeAPIReady = function () {
+        var video = document.getElementById("showcase-video");
+        if (!video || !window.YT || !YT.Player) return;
+
+        new YT.Player(video, {
+          events: {
+            onStateChange: function (event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                window.AnimateAchievement("achievement.cinema.title", "achievement.cinema.description");
+              }
+            }
+          }
+        });
+      };
+
+      var youtubeApi = document.createElement("script");
+      youtubeApi.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(youtubeApi);
+    })();
+
     function copyTranslation(key) {
       var lang = document.documentElement.lang || "es";
       var dict = (window.translations && window.translations[lang]) || {};
@@ -219,6 +436,9 @@
 
     function copyEmail(button) {
       navigator.clipboard.writeText("enniofernando@gmail.com");
+      if (typeof window.AnimateAchievement === "function") {
+        window.AnimateAchievement("achievement.copycat.title", "achievement.copycat.description");
+      }
 
       button.classList.add("is-copied");
       button.setAttribute("data-i18n-aria", "contact.copied");
