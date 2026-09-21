@@ -346,7 +346,37 @@ const translations = {
     "project.topdownaction.gallery.alt1": "Captura del proyecto 1",
     "project.topdownaction.gallery.alt2": "Captura del proyecto 2",
     "project.topdownaction.gallery.alt3": "Captura del proyecto 3",
-    "project.topdownaction.gallery.alt4": "Captura del proyecto 4"
+    "project.topdownaction.gallery.alt4": "Captura del proyecto 4",
+
+    // ---- Hina ----
+    "project.hina.back": "Volver al portfolio",
+    "project.hina.title": "Hina",
+    "project.hina.tagline": "Bot narrativo que gestiona el guion vivo de un videojuego a través de Telegram.",
+    "project.hina.link.github": "Código en GitHub",
+    "project.hina.about.heading": "Sobre el proyecto",
+    "project.hina.about.body": "A mí me encanta escribir historias, hablar de ellas con amigos y pensar en ideas divertidas e interesantes, pero siempre me ha costado documentar todo lo que conlleva escribir una historia: personajes, eventos, worldbuilding, tramas, subtramas e ideas. Llevar cuenta de todo esto se hace muy difícil de organizar después de cierto punto. Por eso decidí crear Hina: un bot que se encarga de todas las tareas difíciles, como organizar y gestionar el documento maestro, realizar cambios coherentes en muchos lugares a la vez y establecer referencias cruzadas. Todo esto mientras tú puedes enfocarte en la parte creativa de crear la historia, los personajes y el mundo. De esta forma, puedes dejar por escrito todo lo que tienes en la cabeza sin tener que preocuparte por reescribir documentos, reorganizar referencias cruzadas, olvidarte de ideas o intenciones, o perderte en decenas de páginas de worldbuilding donde ya no recuerdas qué es canon y qué no.\n\nProyecto personal de un bot de Telegram con IA que sirve como asistente narrativo para escribir historias de videojuegos. El objetivo de este chatbot es gestionar una estructura de archivos Markdown con toda la historia, eventos, fichas e información importante de una historia. El bot se encarga de documentar toda la historia, apuntar ideas, encontrar discrepancias, entender narrativas y hallar agujeros argumentativos.\n\nPara el alma de este proyecto, ha sido muy importante para mí que el bot no sea una IA generativa que escriba historias por ti. El sistema está diseñado para que la historia la escriba el usuario, y el agente solamente se encargue de organizar toda la información en documentos Markdown. El chatbot no genera contenido nuevo ni escribe por ti. Solamente organiza y sintetiza lo que tú le cuentes, utilizando todo el contexto que conoce de la historia para ayudar al escritor a encontrar problemas, atar cabos sueltos, organizar sus tramas, encontrar conflictos y ofrecer un sinfín de asistencias de escritura.\n\nPuedes pensar en este bot como una persona pequeñita a la que le cuentas toda la historia de tu videojuego y que se encarga de escribirlo todo de forma rigurosa y fiel a tu visión original. Él sabe todo lo que pasa en tu historia de memoria. Puedes hacerle preguntas, puedes pedirle que cambie cosas y él gestiona el documento maestro con todo el contenido. Tú simplemente tienes que hablar con él y contarle lo que quieres.",
+    "project.hina.role.heading": "Mi rol",
+    "project.hina.role.body": "Diseñé y desarrollé un bot de Telegram en Node.js que actúa como sistema de gestión narrativa para la historia de un videojuego. El bot utiliza LLMs enrutados a través de OpenRouter: un story agent (Gemini Flash) que devuelve JSON estructurado para gestionar el estado de la narrativa, seguido opcionalmente de una capa de personalidad conversacional llamada Hina (DeepSeek / Gemini Flash Lite) que responde en español. La historia se organiza en archivos Markdown jerárquicos por entidad (personajes, mundo, etc.), con parcheado por secciones y auto-commits a Git para mantener el historial de versiones. Incluye un comando /descargar que empaqueta y envía los archivos de la historia por Telegram.",
+    "project.hina.challenges.heading": "Retos técnicos",
+    "project.hina.challenges.item1": "Desarrollar en Node.js un sistema de chatbot conectado a Telegram.",
+    "project.hina.challenges.item2": "Utilizar diversos agentes de IA encargados de tareas distintas, editando archivos de forma local.",
+    "project.hina.challenges.item3": "Prompting y diseño de agentes para que sean fieles a las reglas del producto, evitando que inventen o escriban contenido que no haya sido expresamente escrito por el autor de forma intencional.",
+    "project.hina.learned.heading": "Qué aprendí",
+    "project.hina.learned.body": "Aprendí a montar agentes de IA con OpenRouter y a dividir sus responsabilidades en tareas específicas.\n\nAprendí a crear bots conversacionales de Telegram.",
+    "project.hina.facts.heading": "Ficha de desarrollo",
+    "project.hina.facts.engine.label": "Tecnología",
+    "project.hina.facts.engine.value": "Node.js, OpenRouter, Telegram Bot API",
+    "project.hina.facts.duration.label": "Duración",
+    "project.hina.facts.duration.value": "En desarrollo",
+    "project.hina.facts.team.label": "Equipo",
+    "project.hina.facts.team.value": "Solo",
+    "project.hina.facts.platform.label": "Plataforma",
+    "project.hina.facts.platform.value": "PC",
+    "project.hina.gallery.heading": "Galería",
+    "project.hina.gallery.alt1": "Captura del proyecto 1",
+    "project.hina.gallery.alt2": "Captura del proyecto 2",
+    "project.hina.gallery.alt3": "Captura del proyecto 3",
+    "project.hina.gallery.alt4": "Captura del proyecto 4",
   },
 
   en: {
@@ -379,32 +409,6 @@ const translations = {
 
     "portfolio.heading": "Portfolio",
     "card.aria": "View project (coming soon)",
-
-    "project.crypt.title": "Isometric Crypt",
-    "project.crypt.desc": "Unity hack-and-slash with combo-based combat and procedural dungeon generation.",
-    "project.crypt.badge": "Gamejam Winner",
-
-    "project.loop.title": "Midnight Loop",
-    "project.loop.desc": "Narrative horror in Unreal Engine 5 with a three-day cycle and a mutating protagonist.",
-    "project.loop.badge": "CPCRetroDev Winner",
-
-    "project.arcade.title": "Pocket Arcade",
-    "project.arcade.desc": "A collection of arcade mini-games designed for under-a-minute sessions.",
-
-    "project.hina.title": "Hina",
-    "project.hina.desc": "A narrative bot that manages a game's living script through Telegram.",
-
-    "project.orbit.title": "Broken Orbit",
-    "project.orbit.desc": "Space puzzle prototype with manipulable gravity and custom physics.",
-
-    "project.foundry.title": "The Foundry",
-    "project.foundry.desc": "Phase-based crafting and interaction system built with event dispatchers in Blueprints.",
-
-    "project.echo.title": "Echo",
-    "project.echo.desc": "A sound-and-stealth experiment where every footstep leaves an audible trace for enemies.",
-
-    "project.relic.title": "Relic",
-    "project.relic.desc": "Exploration adventure with a physical inventory and real-time item combination.",
 
     "contact.heading": "Let's talk",
     "contact.subtitle": "Got a project in mind, or just want to talk shop? Reach out.",
@@ -691,7 +695,37 @@ const translations = {
     "project.topdownaction.gallery.alt1": "Project screenshot 1",
     "project.topdownaction.gallery.alt2": "Project screenshot 2",
     "project.topdownaction.gallery.alt3": "Project screenshot 3",
-    "project.topdownaction.gallery.alt4": "Project screenshot 4"
+    "project.topdownaction.gallery.alt4": "Project screenshot 4",
+
+    // ---- Hina ----
+    "project.hina.back": "Back to portfolio",
+    "project.hina.title": "Hina",
+    "project.hina.tagline": "A narrative bot that manages the living script of a video game through Telegram.",
+    "project.hina.link.github": "Source code on GitHub",
+    "project.hina.about.heading": "About the project",
+    "project.hina.about.body": "I love writing stories, talking about them with friends, and coming up with fun and interesting ideas, but I have always struggled with documenting everything that goes into writing a story: characters, events, worldbuilding, plots, subplots, and ideas. Keeping track of all this becomes increasingly difficult to organize once a story reaches a certain point. That's why I decided to create Hina: a bot that takes care of the difficult tasks, such as organizing and managing the master document, making consistent changes across multiple places at once, and maintaining cross-references. This allows you to focus on the creative side of building the story, characters, and world. You can put everything in your head into writing without having to worry about rewriting documents, reorganizing cross-references, forgetting ideas or intentions, or getting lost in dozens of pages of worldbuilding where you no longer remember what is canon and what isn't.\n\nA personal project involving an AI-powered Telegram bot that acts as a narrative assistant for writing video game stories. The goal of this chatbot is to manage a Markdown file structure containing the story, events, character sheets, and other important information. The bot is responsible for documenting the story, recording ideas, finding inconsistencies, understanding narrative structure, and identifying plot holes.\n\nOne of the core principles of this project is that the bot should not be a generative AI that writes stories for you. The system is designed so that the user writes the story, while the agent focuses solely on organizing the information into Markdown documents. The chatbot does not generate new content or write the story for you. It only organizes and synthesizes what you tell it, using all the context it knows about the story to help the writer identify problems, tie up loose ends, organize plotlines, find conflicts, and provide a wide range of writing assistance.\n\nYou can think of this bot as a tiny person you tell your entire video game story to, who then writes everything down rigorously and faithfully to your original vision. It remembers everything that happens in your story. You can ask it questions, ask it to change things, and it manages the master document containing all the content. You simply have to talk to it and tell it what you want.",
+    "project.hina.role.heading": "My role",
+    "project.hina.role.body": "I designed and developed a Telegram bot in Node.js that acts as a narrative management system for a video game story. The bot uses LLMs routed through OpenRouter: a story agent (Gemini Flash) that returns structured JSON to manage the state of the narrative, optionally followed by a conversational personality layer called Hina (DeepSeek / Gemini Flash Lite) that responds in Spanish. The story is organized into hierarchical Markdown files by entity (characters, world, etc.), with section-based patching and automatic Git commits to maintain version history. It also includes a /download command that packages and sends the story files through Telegram.",
+    "project.hina.challenges.heading": "Technical challenges",
+    "project.hina.challenges.item1": "Developing a Node.js chatbot system integrated with Telegram.",
+    "project.hina.challenges.item2": "Using multiple AI agents responsible for different tasks, editing files locally.",
+    "project.hina.challenges.item3": "Prompting and agent design to ensure the agents remain faithful to the product's rules, preventing them from inventing or writing content that was not explicitly and intentionally provided by the author.",
+    "project.hina.learned.heading": "What I learned",
+    "project.hina.learned.body": "I learned how to build AI agents with OpenRouter and divide their responsibilities into specific tasks.\n\nI learned how to create conversational Telegram bots.",
+    "project.hina.facts.heading": "Development details",
+    "project.hina.facts.engine.label": "Technology",
+    "project.hina.facts.engine.value": "Node.js, OpenRouter, Telegram Bot API",
+    "project.hina.facts.duration.label": "Duration",
+    "project.hina.facts.duration.value": "Work in Progress",
+    "project.hina.facts.team.label": "Team",
+    "project.hina.facts.team.value": "Solo",
+    "project.hina.facts.platform.label": "Platform",
+    "project.hina.facts.platform.value": "PC",
+    "project.hina.gallery.heading": "Gallery",
+    "project.hina.gallery.alt1": "Project screenshot 1",
+    "project.hina.gallery.alt2": "Project screenshot 2",
+    "project.hina.gallery.alt3": "Project screenshot 3",
+    "project.hina.gallery.alt4": "Project screenshot 4",
   }
 };
 
