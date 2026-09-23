@@ -253,7 +253,7 @@ const translations = {
 
     // ---- Mask Apito ----
     "project.maskapito.back": "Volver al portfolio",
-    "project.maskapito.title": "Mask Apito",
+    "project.maskapito.title": "Mask Apito (GGJ 2026)",
     "project.maskapito.award": "Ganador Global Game Jam Alicante 2026",
     "project.maskapito.tagline": "Beat 'em all en 3D donde recolectas y combinas máscaras con poderes.",
     "project.maskapito.link.itch": "Jugar en itch.io",
@@ -286,7 +286,7 @@ const translations = {
 
     // ---- Trashy Neighbours ----
     "project.trashyneighbours.back": "Volver al portfolio",
-    "project.trashyneighbours.title": "Trashy Neighbours",
+    "project.trashyneighbours.title": "Trashy Neighbours (GGJ 2024)",
     "project.trashyneighbours.tagline": "Juego de fiesta online en 3D. Lucha como un mapache usando basura para vencer a tu vecino.",
     "project.trashyneighbours.link.itch": "Jugar en itch.io",
     "project.trashyneighbours.link.steam": "Ver en Steam",
@@ -601,7 +601,7 @@ const translations = {
 
     // ---- Mask Apito ----
     "project.maskapito.back": "Back to portfolio",
-    "project.maskapito.title": "Mask Apito",
+    "project.maskapito.title": "Mask Apito (GGJ 2026)",
     "project.maskapito.award": "Global Game Jam Alicante 2026 Winner",
     "project.maskapito.tagline": "3D beat 'em all where you collect and combine masks with powers.",
     "project.maskapito.link.itch": "Play on itch.io",
@@ -635,7 +635,7 @@ const translations = {
 
     // ---- Trashy Neighbours ----
     "project.trashyneighbours.back": "Back to portfolio",
-    "project.trashyneighbours.title": "Trashy Neighbours",
+    "project.trashyneighbours.title": "Trashy Neighbours (GGJ 2024)",
     "project.trashyneighbours.tagline": "3D online party game. Fight as a raccoon using trash to defeat your neighbour.",
     "project.trashyneighbours.link.itch": "Play on itch.io",
     "project.trashyneighbours.link.steam": "View on Steam",
