@@ -116,29 +116,32 @@
       statusEl.textContent = "";
       statusEl.classList.remove("form-status--success");
 
-      // --- AQUÍ IRÍA EL ENVÍO REAL ---
-      // Ejemplo con Formspree, una vez tengas tu propia URL de formulario:
-      //
-      // fetch("https://formspree.io/f/TU_ID", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json", Accept: "application/json" },
-      //   body: JSON.stringify(payload)
-      // })
-      //   .then(function (res) { ... manejar éxito/error real ... });
-      //
-      // Por ahora simulamos la espera de red con un timeout:
-      setTimeout(function () {
-        console.log("Formulario listo para enviar:", payload);
+      // Rellena esto con lo que hayas sacado de tu Google Form:
+      var GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4QZUA_msnPeoHLqO8IIhbq_OnT6QFB6mzdy1xb7Fo2OI1ww/formResponse";
+      var ENTRY_NAME = "entry.785666991";
+      var ENTRY_EMAIL = "entry.2054278623";
+      var ENTRY_MESSAGE = "entry.1585229262";
 
+      // --- AQUÍ IRÍA EL ENVÍO REAL ---
+      var formData = new FormData();
+      formData.append(ENTRY_NAME, payload.name);
+      formData.append(ENTRY_EMAIL, payload.email);
+      formData.append(ENTRY_MESSAGE, payload.message);
+
+      fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors", // obligatorio: Google no permite leer la respuesta, así que no podemos comprobar el resultado real
+        body: formData
+      });
+
+      // Como "no-cors" no nos deja saber si funcionó, asumimos éxito tras un pequeño margen:
+      setTimeout(function () {
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel;
         statusEl.textContent = t("contact.success");
         statusEl.classList.add("form-status--success");
-        if (typeof window.AnimateAchievement === "function") {
-          window.AnimateAchievement("achievement.contact.title", "achievement.contact.description");
-        }
         form.reset();
-      }, 900);
+      }, 600);
     });
   });
 })();
