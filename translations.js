@@ -9,8 +9,9 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.contacto": "Contacto",
 
-    "hero.title": "Construyo mundos jugables, un sistema a la vez.",
-    "hero.subtitle": "Desarrollador de videojuegos independiente. Diseño mecánicas, escribo el código que las sostiene y cuido cada detalle hasta que se sienten bien al jugarlas.",
+    "hero.title": "Programador de Sistemas y Gameplay",
+    "hero.subtitle": "Me encanta construir experiencias divertidas. Desde diseño y desarrollo de gameplay, hasta arquitectura de sistemas y programación de motores.",
+    "hero.subtitlebasedin": "Ubicado en España.",
     "hero.cta.linkedin": "LinkedIn",
     "hero.cta.itch": "Itch.io",
     "hero.video.title": "¡Mírame!",
@@ -384,8 +385,9 @@ const translations = {
     "nav.portfolio": "Portfolio",
     "nav.contacto": "Contact",
 
-    "hero.title": "I build playable worlds, one system at a time.",
-    "hero.subtitle": "Independent game developer. I design mechanics, write the code that holds them together, and polish every detail until they feel right to play.",
+    "hero.title": "Gameplay & Systems Programmer",
+    "hero.subtitle": "I love building fun experiences. From gameplay design and development, all the way to systems architecture and engine programming.",
+    "hero.subtitlebasedin": "Based in Spain.",
     "hero.cta.linkedin": "LinkedIn",
     "hero.cta.itch": "Itch.io",
     "hero.video.title": "Watch me!",
