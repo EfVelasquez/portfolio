@@ -152,6 +152,7 @@ h1, h2, h3 {
   font-weight: 600;
   cursor: pointer;
   user-select: none;
+  vertical-align: middle;
 }
 
 .achievement-toggle-icon {
@@ -665,7 +666,7 @@ h1, h2, h3 {
 }
 
 .reset-achievements {
-  margin-top: 10px;
+  margin-top: 0;
   border: 0;
   padding: 2px 5px;
   background: transparent;
@@ -675,6 +676,9 @@ h1, h2, h3 {
   opacity: 0.38;
   cursor: pointer;
   transition: opacity 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
 .reset-achievements:hover,
